@@ -1,4 +1,4 @@
-# 🏠 Real Estate Frontend# 🏠 Real Estate Frontend# 🏠 Real Estate Frontend# 🏠 Real Estate Frontend
+# 🏠 Real Estate Frontend
 
 
 
@@ -6,7 +6,7 @@
 
 
 
-<div align="center">> **Una aplicación moderna de gestión de propiedades inmobiliarias construida con React 19, TypeScript y Tailwind CSS v4.**
+<div align="center"> **Una aplicación moderna de gestión de propiedades inmobiliarias construida con React 19, TypeScript y Tailwind CSS v4.**
 
 
 
