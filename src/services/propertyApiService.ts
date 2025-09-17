@@ -29,8 +29,6 @@ class PropertyApiService {
         },
       };
 
-      console.log(`Making request to: ${url}`, config);
-
       const response = await fetch(url, config);
       
       if (!response.ok) {
@@ -38,7 +36,6 @@ class PropertyApiService {
       }
 
       const data = await response.json();
-      console.log('API Response:', data);
       
       return data;
     } catch (error) {

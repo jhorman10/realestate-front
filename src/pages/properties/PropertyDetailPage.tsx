@@ -1,21 +1,41 @@
 import React from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useProperty, useDeleteProperty } from '../../hooks/usePropertyApi';
+import { useConfirmDialog } from '../../hooks/useConfirmDialog';
+import ConfirmDialog from '../../components/ui/ConfirmDialog';
+import toast from 'react-hot-toast';
 
 const PropertyDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const deletePropertyMutation = useDeleteProperty();
+  const { dialogState, showConfirm } = useConfirmDialog();
 
   const { data: property, isLoading, error } = useProperty(id!);
 
   const handleDelete = async () => {
-    if (window.confirm('Are you sure you want to delete this property?')) {
+    const confirmed = await showConfirm({
+      title: 'Delete Property',
+      message: `Are you sure you want to delete "${property?.name}"? This action cannot be undone.`,
+      confirmText: 'Delete',
+      cancelText: 'Cancel',
+      type: 'danger'
+    });
+
+    if (confirmed) {
+      const loadingToast = toast.loading('Deleting property...');
+      
       try {
         await deletePropertyMutation.mutateAsync(id!);
+        toast.dismiss(loadingToast); // Dismiss loading toast, success is handled by the hook
         navigate('/properties');
-      } catch (error) {
+      } catch (error: unknown) {
         console.error('Failed to delete property:', error);
+        const errorMessage = error instanceof Error 
+          ? error.message 
+          : 'Failed to delete property. Please try again.';
+        
+        toast.error(errorMessage, { id: loadingToast });
       }
     }
   };
@@ -228,6 +248,16 @@ const PropertyDetailPage: React.FC = () => {
           </div>
         </div>
       </div>
+      <ConfirmDialog 
+        isOpen={dialogState.isOpen}
+        title={dialogState.title}
+        message={dialogState.message}
+        confirmText={dialogState.confirmText}
+        cancelText={dialogState.cancelText}
+        type={dialogState.type}
+        onConfirm={dialogState.onConfirm}
+        onCancel={dialogState.onCancel}
+      />
     </div>
   );
 };

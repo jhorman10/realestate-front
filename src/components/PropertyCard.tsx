@@ -15,8 +15,6 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
   const [isInView, setIsInView] = useState(false);
   const imgRef = useRef<HTMLDivElement>(null);
   
-  console.log('PropertyCard rendering for property:', property.id, property.name);
-  
   // Intersection Observer for lazy loading
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -38,13 +36,11 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
   
   const handleViewClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    console.log('View Details clicked for property:', property.id);
     window.location.href = `/properties/${property.id}`;
   };
   
   const handleEditClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    console.log('Edit clicked for property:', property.id);
     window.location.href = `/properties/${property.id}/edit`;
   };
 
@@ -89,12 +85,10 @@ export const PropertyCard: React.FC<PropertyCardProps> = ({ property }) => {
   
   const handleImageLoad = () => {
     setImageLoaded(true);
-    console.log('Image loaded for property:', property.name);
   };
 
   const handleImageError = () => {
     setImageError(true);
-    console.warn('Failed to load image for property:', property.name, 'URL:', imageUrl);
   };
   
   return (
