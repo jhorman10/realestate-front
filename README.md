@@ -1339,7 +1339,7 @@ SOFTWARE.
 
 [![GitHub](https://img.shields.io/badge/GitHub-@jhorman10-181717?style=for-the-badge&logo=github)](https://github.com/jhorman10)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-jhorman--orozco-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/jhorman-orozco)
-[![Email](https://img.shields.io/badge/Email-jhormanorozco@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:jhormanorozco@gmail.com)
+[![Email](https://img.shields.io/badge/Email-jsojhor@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:jsojhor@gmail.com)
 
 </div>
 
