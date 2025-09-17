@@ -2,12 +2,7 @@
 
 
 
-> **Una aplicación moderna de gestión de propiedades inmobiliarias construida con React 19, TypeScript y Tailwind CSS v4.**
-
-
-
-<div align="center"> **Una aplicación moderna de gestión de propiedades inmobiliarias construida con React 19, TypeScript y Tailwind CSS v4.**
-
+**Una aplicación moderna de gestión de propiedades inmobiliarias construida con React 19, TypeScript y Tailwind CSS v4.**
 
 
 ![React](https://img.shields.io/badge/React-19.1.1-61DAFB?style=for-the-badge&logo=react&logoColor=black)
